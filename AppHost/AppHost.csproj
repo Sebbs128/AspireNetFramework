@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsAspireHost>true</IsAspireHost>
+		<UserSecretsId>1442742c-ded9-4d01-aca8-6e4d70c59f1f</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CoreApi\CoreApi.csproj" />
+		<ProjectReference Include="..\CoreMvc\CoreMvc.csproj" />
+		<ProjectReference Include="..\FrameworkMvc\FrameworkMvc.csproj" />
+		<ProjectReference Include="..\Hosting.AspNet\Hosting.AspNet.csproj" IsAspireProjectResource="false" />
+	</ItemGroup>
+
+</Project>
