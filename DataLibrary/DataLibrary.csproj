@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="EntityFramework" Version="6.5.1" />
+        <PackageReference Include="Microsoft.EntityFramework.SqlServer" Version="6.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Migrations\202407250937231_InitialSeed.resx">
+            <Generator></Generator>
+            <DependentUpon>202407250937231_InitialSeed.cs</DependentUpon>
+        </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

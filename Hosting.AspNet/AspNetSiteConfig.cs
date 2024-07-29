@@ -1,24 +1,53 @@
-﻿namespace Hosting.AspNet;
+﻿using System.Xml.Serialization;
 
-internal class AspNetSiteConfig(string name, Application application, IReadOnlyCollection<Binding> bindings)
+namespace Hosting.AspNet;
+
+[XmlRoot("configuration")]
+public class ApplicationHostConfiguration
 {
-    public string Name { get; } = name;
-    public Application Application { get; } = application;
-    public IReadOnlyCollection<Binding> Bindings { get; } = bindings;
+    [XmlElement("system.applicationHost")]
+    public required SystemApplicationHost SystemApplicationHost { get; set; }
 }
 
-internal class Application(VirtualDirectory virtualDirectory)
+public class SystemApplicationHost
 {
-    public VirtualDirectory VirtualDirectory { get; } = virtualDirectory;
+    [XmlArray("sites")]
+    [XmlArrayItem("site", typeof(Site))]
+    public required Site[] Sites { get; set; }
 }
 
-internal class VirtualDirectory(string physicalPath)
+public class Site
 {
-    public string PhysicalPath { get; } = physicalPath;
+    [XmlAttribute("name")]
+    public required string Name { get; set; }
+
+    [XmlElement("application")]
+    public required Application Application { get; set; }
+
+    [XmlArray("bindings")]
+    [XmlArrayItem("binding", typeof(Binding))]
+    public required Binding[] Bindings { get; set; }
 }
 
-internal class Binding(string protocol, int port)
+public class Application
 {
-    public string Protocol { get; } = protocol;
-    public int Port { get; } = port;
+    [XmlElement("virtualDirectory")]
+    public required VirtualDirectory VirtualDirectory { get; set; }
+}
+
+public class VirtualDirectory
+{
+    [XmlAttribute("physicalPath")]
+    public required string PhysicalPath { get; set; }
+}
+
+public class Binding
+{
+    [XmlAttribute("protocol")]
+    public required string Protocol { get; set; }
+
+    [XmlAttribute("bindingInformation")]
+    public required string BindingInformation { get; set; }
+
+    public int Port => int.Parse(BindingInformation.Split(':')[1]);
 }

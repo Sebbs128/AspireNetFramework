@@ -1,4 +1,4 @@
-﻿using System.Xml.Linq;
+﻿using System.Xml.Serialization;
 
 using Aspire.Hosting.ApplicationModel;
 
@@ -37,6 +37,11 @@ public static class AspNetResourceExtensions
         var projectPath = builder.Resource.Annotations.OfType<TProject>().First().ProjectPath;
 
         var siteConfig = GetSiteConfig(applicationHostConfigPath, projectPath);
+
+        if (siteConfig is null)
+        {
+            return builder;
+        }
 
         builder.WithArgs($"/config:{applicationHostConfigPath}", $"/site:{siteConfig.Name}");
 
@@ -79,32 +84,24 @@ public static class AspNetResourceExtensions
         return null;
     }
 
-    private static AspNetSiteConfig GetSiteConfig(string appHostConfigPath, string projectPath)
+    private static Site? GetSiteConfig(string appHostConfigPath, string projectPath)
     {
-        var xmlDoc = XDocument.Load(appHostConfigPath);
+        var serializer = new XmlSerializer(typeof(ApplicationHostConfiguration));
+        using var reader = new FileStream(appHostConfigPath, FileMode.Open);
 
-        var sites = xmlDoc.Element("configuration")
-            .Element("system.applicationHost")
-            .Element("sites");
+        if (serializer.Deserialize(reader) is not ApplicationHostConfiguration appHostConfig)
+        {
+            return null;
+        }
 
-        var site = sites.Descendants("site").FirstOrDefault(e =>
-            e.Element("application")
-            .Element("virtualDirectory")
-            .Attribute("physicalPath").Value == Path.GetDirectoryName(projectPath));
+        var comparison = Environment.OSVersion.Platform == PlatformID.Win32NT
+            ? StringComparison.OrdinalIgnoreCase
+            : StringComparison.Ordinal;
 
-        var virtualDirectory = new VirtualDirectory(site
-            .Element("application")
-            .Element("virtualDirectory")
-            .Attribute("physicalPath").Value);
-        var application = new Application(virtualDirectory);
-
-        var bindings = site.Element("bindings")
-            .Descendants("binding")
-            .Select(e => new Binding(
-                e.Attribute("protocol").Value,
-                int.Parse(e.Attribute("bindingInformation").Value.Split(':')[1])))
-            .ToList();
-
-        return new AspNetSiteConfig(site.Attribute("name").Value, application, bindings);
+        return appHostConfig.SystemApplicationHost.Sites
+            .SingleOrDefault(s => string.Equals(
+                s.Application.VirtualDirectory.PhysicalPath,
+                Path.GetDirectoryName(projectPath),
+                comparison));
     }
 }

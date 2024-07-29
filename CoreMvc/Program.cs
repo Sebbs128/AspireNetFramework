@@ -1,6 +1,10 @@
+using CoreMvc.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.AddServiceDefaults();
+builder.AddEntityFramework6("mydatabase");
 
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))

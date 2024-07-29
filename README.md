@@ -7,11 +7,15 @@ The Aspire AppHost orchestrates
 - `coreApi`: an ASP.NET Core Web API
 - `frameworkMvc`: an ASP.NET MVC project
   - the project is started via IIS Express, reading the config in `.vs\AspireNetFramework\config\appliationhost.config`
-  - references to the service endpoints of `coreApi`
+  - contains service references to
+    - the service endpoints of `coreApi`
+    - the SQL Server database `mydatabase`
     - Aspire injects these to the IIS Express process as environment variables, which can be read via `ConfigurationManager` after setting up `Microsoft.Configuration.ConfigurationBuilders.EnvironmentConfigBuilder` in the `web.config`
 - `coreMvc`: an ASP.NET Core MVC project
-  - references to the service endpoints of `frameworkMvc`, for use with YARP
-  - references to the service endpoionts of `coreApi` (although currently unused)
+  - contains service references to
+    - the service endpoints of `frameworkMvc`, for use with YARP
+    - the service endpoionts of `coreApi` (although currently unused)
+    - the SQL Server database `mydatabase`
 
 ## Why???
 
@@ -24,10 +28,9 @@ Some areas where work is needed:
 - Visual Studio debugger isn't automatically attached to `frameworkMvc`
   - it can be attached manually though (Debug->Attach to Process...)
 - the ports for `frameworkMvc` bypass the Aspire AppHost's proxy
-- service endpoint resolution in `frameworkMvc` (in the `WeatherController`) is currently very ad-hoc, and needs to be developed further
 
 ## TODO
 
 Aside from resolving shortcomings, other things to add for this experiment include
 
-- Adding SQL Server to the AppHost, and resolving the connection string in `frameworkMvc`
+- inject the `RemoteApiKey` value used by System.Web Adapters from the AppHost, rather than setting in two separate config files

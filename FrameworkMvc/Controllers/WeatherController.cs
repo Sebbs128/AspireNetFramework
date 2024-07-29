@@ -18,21 +18,12 @@ namespace FrameworkMvc.Controllers
         {
             var client = new HttpClient();
 
-            var baseUri = ResolveServiceEndpoint("ApiPath");
+            var baseUri = new Uri(ConfigurationManager.AppSettings.ResolveService("ApiPath"));
             var uri = new Uri(baseUri, "weatherForecast");
 
             var models = await client.GetFromJsonAsync<IEnumerable<WeatherForecastModel>>(uri);
 
             return View(models);
-        }
-
-        private Uri ResolveServiceEndpoint(string key)
-        {
-            var uriFromConfig = new Uri(ConfigurationManager.AppSettings[key].ToLowerInvariant());
-
-            var serviceKey = $"{uriFromConfig.Host}__{uriFromConfig.Scheme}__0";
-
-            return new Uri(ConfigurationManager.AppSettings[serviceKey]);
         }
     }
 }

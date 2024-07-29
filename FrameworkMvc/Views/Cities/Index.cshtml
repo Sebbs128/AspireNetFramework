@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DataLibrary.Models.City>
+
+@{
+    ViewBag.Title = "Cities";
+}
+
+<h2>Cities</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var city in Model)
+        {
+            <tr>
+                <td>@city.Name</td>
+                <td>@city.Country.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
