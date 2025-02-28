@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>1442742c-ded9-4d01-aca8-6e4d70c59f1f</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreApi\AspireNetFramework.Samples.CoreApi.csproj" />
+    <ProjectReference Include="..\CoreMvc\AspireNetFramework.Samples.CoreMvc.csproj" />
+    <ProjectReference Include="..\FrameworkMvc\AspireNetFramework.Samples.FrameworkMvc.csproj" />
+    <ProjectReference Include="..\..\src\Hosting.AspNet\AspireNetFramework.Hosting.AspNet.csproj" IsAspireProjectResource="false" />
+  </ItemGroup>
+</Project>
