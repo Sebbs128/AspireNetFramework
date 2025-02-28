@@ -2,21 +2,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppHost", "AppHost\AppHost.csproj", "{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4A168FC6-71EA-4604-B998-8B7FB172CA91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceDefaults", "ServiceDefaults\ServiceDefaults.csproj", "{D8CEAAE5-B771-4C99-B4E3-243D81D5F19B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Hosting.AspNet", "src\Hosting.AspNet\AspireNetFramework.Hosting.AspNet.csproj", "{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreMvc", "CoreMvc\CoreMvc.csproj", "{39D81236-AB0D-41AF-BE21-079219D469BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Configuration.ServiceDiscovery", "src\Configuration.ServiceDiscovery\AspireNetFramework.Configuration.ServiceDiscovery.csproj", "{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkMvc", "FrameworkMvc\FrameworkMvc.csproj", "{22DEBC57-DA81-480C-8FF3-C204E20CD7CE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{EDA9D09E-8901-4EC9-B105-F3676D4C41DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hosting.AspNet", "Hosting.AspNet\Hosting.AspNet.csproj", "{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Samples.AppHost", "samples\AppHost\AspireNetFramework.Samples.AppHost.csproj", "{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApi", "CoreApi\CoreApi.csproj", "{1FC25B73-60BE-4544-86D8-37207E544894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Samples.ServiceDefaults", "samples\ServiceDefaults\AspireNetFramework.Samples.ServiceDefaults.csproj", "{D8CEAAE5-B771-4C99-B4E3-243D81D5F19B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.ServiceDiscovery", "Configuration.ServiceDiscovery\Configuration.ServiceDiscovery.csproj", "{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Samples.CoreMvc", "samples\CoreMvc\AspireNetFramework.Samples.CoreMvc.csproj", "{39D81236-AB0D-41AF-BE21-079219D469BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{FC8D3391-314D-4460-A124-1A29DEB7E526}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireNetFramework.Samples.FrameworkMvc", "samples\FrameworkMvc\AspireNetFramework.Samples.FrameworkMvc.csproj", "{22DEBC57-DA81-480C-8FF3-C204E20CD7CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Samples.CoreApi", "samples\CoreApi\AspireNetFramework.Samples.CoreApi.csproj", "{1FC25B73-60BE-4544-86D8-37207E544894}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireNetFramework.Samples.DataLibrary", "samples\DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj", "{FC8D3391-314D-4460-A124-1A29DEB7E526}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +28,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,18 +52,10 @@ Global
 		{22DEBC57-DA81-480C-8FF3-C204E20CD7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22DEBC57-DA81-480C-8FF3-C204E20CD7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22DEBC57-DA81-480C-8FF3-C204E20CD7CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FC25B73-60BE-4544-86D8-37207E544894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FC25B73-60BE-4544-86D8-37207E544894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC25B73-60BE-4544-86D8-37207E544894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC25B73-60BE-4544-86D8-37207E544894}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC8D3391-314D-4460-A124-1A29DEB7E526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC8D3391-314D-4460-A124-1A29DEB7E526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC8D3391-314D-4460-A124-1A29DEB7E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +63,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FAEBEC1E-78FF-46BD-9F24-64BF55FD76B5} = {4A168FC6-71EA-4604-B998-8B7FB172CA91}
+		{9BD06DA4-DB31-45A5-ABCC-D0FC4BB2EDA2} = {4A168FC6-71EA-4604-B998-8B7FB172CA91}
+		{E67C28B1-A9C8-432F-8EAC-5861FE9DC55D} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
+		{D8CEAAE5-B771-4C99-B4E3-243D81D5F19B} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
+		{39D81236-AB0D-41AF-BE21-079219D469BB} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
+		{22DEBC57-DA81-480C-8FF3-C204E20CD7CE} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
+		{1FC25B73-60BE-4544-86D8-37207E544894} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
+		{FC8D3391-314D-4460-A124-1A29DEB7E526} = {EDA9D09E-8901-4EC9-B105-F3676D4C41DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AB7A4F5-2998-4B84-9A5C-4271A374774E}
