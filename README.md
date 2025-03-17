@@ -2,7 +2,7 @@
 
 An experiment to use an ASP.NET MVC project with .NET Aspire. I'm hoping this might eventually form the basis of a library.
 
-The Aspire AppHost orchestrates
+The Aspire [AppHost](./samples/AspireNetFramework.Samples.AppHost/) orchestrates
 
 - `coreApi`: an ASP.NET Core Web API
 - `frameworkMvc`: an ASP.NET MVC project
@@ -27,7 +27,11 @@ Some areas where work is needed:
 
 - Visual Studio debugger isn't automatically attached to `frameworkMvc`
   - it can be attached manually though (Debug->Attach to Process...)
+  - [CZEMacLeod](https://github.com/CZEMacLeod/C3D.Extensions.Aspire.IISExpress) seems to have a way to do this programmatically
 - the ports for `frameworkMvc` bypass the Aspire AppHost's proxy
+- OpenTelemetry
+  - [AspNet example](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/main/examples/AspNet) and [docs](https://opentelemetry.io/docs/languages/net/netframework/)
+  - [Owin example](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/main/examples/owin)
 
 ## TODO
 
