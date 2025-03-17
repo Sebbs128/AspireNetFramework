@@ -406,11 +406,11 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Configuration.ServiceDiscovery\AspireNetFramework.Configuration.ServiceDiscovery.csproj">
+    <ProjectReference Include="..\..\src\AspireNetFramework.Configuration.ServiceDiscovery\AspireNetFramework.Configuration.ServiceDiscovery.csproj">
       <Project>{9bd06da4-db31-45a5-abcc-d0fc4bb2eda2}</Project>
       <Name>AspireNetFramework.Configuration.ServiceDiscovery</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj">
+    <ProjectReference Include="..\AspireNetFramework.Samples.DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj">
       <Project>{fc8d3391-314d-4460-a124-1a29deb7e526}</Project>
       <Name>AspireNetFramework.Sample.DataLibrary</Name>
     </ProjectReference>

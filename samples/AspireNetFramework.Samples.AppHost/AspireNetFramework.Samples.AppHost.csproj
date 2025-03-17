@@ -14,9 +14,9 @@
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoreApi\AspireNetFramework.Samples.CoreApi.csproj" />
-    <ProjectReference Include="..\CoreMvc\AspireNetFramework.Samples.CoreMvc.csproj" />
-    <ProjectReference Include="..\FrameworkMvc\AspireNetFramework.Samples.FrameworkMvc.csproj" />
-    <ProjectReference Include="..\..\src\Hosting.AspNet\AspireNetFramework.Hosting.AspNet.csproj" IsAspireProjectResource="false" />
+    <ProjectReference Include="..\AspireNetFramework.Samples.CoreApi\AspireNetFramework.Samples.CoreApi.csproj" />
+    <ProjectReference Include="..\AspireNetFramework.Samples.CoreMvc\AspireNetFramework.Samples.CoreMvc.csproj" />
+    <ProjectReference Include="..\AspireNetFramework.Samples.FrameworkMvc\AspireNetFramework.Samples.FrameworkMvc.csproj" />
+    <ProjectReference Include="..\..\src\AspireNetFramework.Hosting.AspNet\AspireNetFramework.Hosting.AspNet.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 </Project>
