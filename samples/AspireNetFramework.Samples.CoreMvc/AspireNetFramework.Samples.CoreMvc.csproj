@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj" />
-    <ProjectReference Include="..\ServiceDefaults\AspireNetFramework.Samples.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\AspireNetFramework.Samples.DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj" />
+    <ProjectReference Include="..\AspireNetFramework.Samples.ServiceDefaults\AspireNetFramework.Samples.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

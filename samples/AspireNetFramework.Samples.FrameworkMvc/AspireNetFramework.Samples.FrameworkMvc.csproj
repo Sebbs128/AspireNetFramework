@@ -134,6 +134,24 @@
       <HintPath>..\..\packages\Microsoft.Extensions.Primitives.9.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="OpenTelemetry, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.1.10.0\lib\net462\OpenTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.Api.1.10.0\lib\net462\OpenTelemetry.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Api.ProviderBuilderExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.Api.ProviderBuilderExtensions.1.10.0\lib\net462\OpenTelemetry.Api.ProviderBuilderExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Exporter.Console, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.Exporter.Console.1.10.0\lib\net462\OpenTelemetry.Exporter.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Instrumentation.AspNet, Version=1.10.0.262, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.Instrumentation.AspNet.1.10.0-beta.1\lib\net462\OpenTelemetry.Instrumentation.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule, Version=1.10.0.262, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule.1.10.0-beta.1\lib\net462\OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
@@ -180,9 +198,6 @@
     <Reference Include="System.Net.Http.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Net.Http.Json.9.0.0\lib\net462\System.Net.Http.Json.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http.WinHttpHandler, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Net.Http.WinHttpHandler.9.0.0\lib\net462\System.Net.Http.WinHttpHandler.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -308,6 +323,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\OpenTelemetryConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -406,11 +422,15 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Configuration.ServiceDiscovery\AspireNetFramework.Configuration.ServiceDiscovery.csproj">
+    <ProjectReference Include="..\..\src\AspireNetFramework.OpenTelemetry\AspireNetFramework.OpenTelemetry.csproj">
+      <Project>{64f64317-1c68-4496-8b18-aebe11509634}</Project>
+      <Name>AspireNetFramework.OpenTelemetry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\AspireNetFramework.Configuration.ServiceDiscovery\AspireNetFramework.Configuration.ServiceDiscovery.csproj">
       <Project>{9bd06da4-db31-45a5-abcc-d0fc4bb2eda2}</Project>
       <Name>AspireNetFramework.Configuration.ServiceDiscovery</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj">
+    <ProjectReference Include="..\AspireNetFramework.Samples.DataLibrary\AspireNetFramework.Samples.DataLibrary.csproj">
       <Project>{fc8d3391-314d-4460-a124-1a29deb7e526}</Project>
       <Name>AspireNetFramework.Sample.DataLibrary</Name>
     </ProjectReference>
